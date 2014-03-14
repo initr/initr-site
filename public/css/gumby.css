@@ -1702,9 +1702,9 @@ body { background: #111; }
 .info p { color: white; text-align: left; font-size: 18px; font-size: 1.125rem; }
 .info h3 { text-align: left; }
 
-footer { font-size: 18px; font-size: 1.125rem; position: fixed; bottom: -8px; left: 20px; }
+footer { font-size: 18px; font-size: 1.125rem; position: fixed; bottom: 8px; left: 20px; }
 
 footer a, .lead a { color: #00abbb; }
 footer a:hover, .lead a:hover { color: #08eaff; }
 
-.github { font-size: 42px; font-size: 2.625rem; }
+.github { font-size: 42px; font-size: 2.625rem; margin-bottom: 20px; }

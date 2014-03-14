@@ -58,7 +58,7 @@ footer {
 
 	position: fixed;
 
-	bottom: -8px;
+	bottom: 8px;
 	left: 20px;
 }
 
@@ -74,4 +74,5 @@ footer, .lead {
 
 .github {
 	@include font-size($xlarge);
+	margin-bottom: 20px;
 }
