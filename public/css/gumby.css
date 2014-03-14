@@ -1700,3 +1700,7 @@ body { background: #111; }
 .info { margin-top: 60px; }
 .info p { color: white; text-align: left; font-size: 18px; font-size: 1.125rem; }
 .info h3 { text-align: left; }
+
+footer { font-size: 18px; font-size: 1.125rem; position: fixed; bottom: -8px; left: 20px; }
+footer a { color: #00abbb; }
+footer a:hover { color: #08eaff; }
