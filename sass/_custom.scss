@@ -10,9 +10,7 @@ h1, h2, a.github, .lead {
 }
 
 .hero {
-	color: #00ABBB;
-
-	margin-top: 60px;
+	margin-top: 20px;
 }
 
 p.lead {
@@ -62,7 +60,7 @@ footer {
 	left: 20px;
 }
 
-footer, .lead {
+footer, .lead, .hero {
 	a {
 		color: $primary-color;
 	}
@@ -74,5 +72,12 @@ footer, .lead {
 
 .github {
 	@include font-size($xlarge);
+	margin-bottom: 20px;
+}
+
+.columns pre.prettyprint {
+	@include border-radius(10px);
+	border: 2px $primary-color solid;
+	padding: 10px;
 	margin-bottom: 20px;
 }

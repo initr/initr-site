@@ -1687,7 +1687,7 @@ table.rounded thead th, table.rounded thead td, table.rounded caption + tbody tr
 
 h1, h2, a.github, .lead { display: block; text-align: center; }
 
-.hero { color: #00ABBB; margin-top: 60px; }
+.hero { margin-top: 20px; }
 
 p.lead { margin-top: 40px; font-size: 42px; font-size: 2.625rem; }
 
@@ -1704,7 +1704,9 @@ body { background: #111; }
 
 footer { font-size: 18px; font-size: 1.125rem; position: fixed; bottom: 8px; left: 20px; }
 
-footer a, .lead a { color: #00abbb; }
-footer a:hover, .lead a:hover { color: #08eaff; }
+footer a, .lead a, .hero a { color: #00abbb; }
+footer a:hover, .lead a:hover, .hero a:hover { color: #08eaff; }
 
 .github { font-size: 42px; font-size: 2.625rem; margin-bottom: 20px; }
+
+.columns pre.prettyprint { -webkit-border-radius: 10px; -moz-border-radius: 10px; -ms-border-radius: 10px; -o-border-radius: 10px; border-radius: 10px; border: 2px #00abbb solid; padding: 10px; margin-bottom: 20px; }
