@@ -1,0 +1,54 @@
+// Your custom SCSS should be written here...
+
+.hero, .lead, .input, .btn input {
+	font-family: 'Audiowide';
+}
+
+.hero {
+	text-align: center;
+	color: #00ABBB;
+
+	margin-top: 60px;
+}
+
+p.lead {
+	margin-top: 40px;
+	@include font-size($xlarge);
+}
+
+.signup-form {
+	margin-top: 40px;
+
+	label {
+		@include font-size($med);
+
+		text-align: left;
+		margin-bottom: 0;
+	}
+
+	.field {
+		margin-bottom: -40px;
+	}
+}
+
+p {
+	font-family: 'Open Sans';
+}
+
+body {
+	background: #111;
+}
+
+.info {
+	margin-top: 60px;
+
+	p {
+		color: white;
+		text-align: left;
+		@include font-size($med);
+	}
+
+	h3 {
+		text-align: left;
+	}
+}
