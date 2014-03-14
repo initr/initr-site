@@ -4,8 +4,12 @@
 	font-family: 'Audiowide';
 }
 
-.hero {
+h1, h2, a.github, .lead {
+	display: block;
 	text-align: center;
+}
+
+.hero {
 	color: #00ABBB;
 
 	margin-top: 60px;
@@ -24,10 +28,6 @@ p.lead {
 
 		text-align: left;
 		margin-bottom: 0;
-	}
-
-	.field {
-		margin-bottom: -40px;
 	}
 }
 
@@ -60,7 +60,9 @@ footer {
 
 	bottom: -8px;
 	left: 20px;
+}
 
+footer, .lead {
 	a {
 		color: $primary-color;
 	}
@@ -68,4 +70,8 @@ footer {
 	a:hover {
 		color: lighten($primary-color, 15%);
 	}
+}
+
+.github {
+	@include font-size($xlarge);
 }

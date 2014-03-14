@@ -1685,13 +1685,14 @@ table.rounded thead th, table.rounded thead td, table.rounded caption + tbody tr
 
 .hero, .lead, .input, .btn input { font-family: 'Audiowide'; }
 
-.hero { text-align: center; color: #00ABBB; margin-top: 60px; }
+h1, h2, a.github, .lead { display: block; text-align: center; }
+
+.hero { color: #00ABBB; margin-top: 60px; }
 
 p.lead { margin-top: 40px; font-size: 42px; font-size: 2.625rem; }
 
 .signup-form { margin-top: 40px; }
 .signup-form label { font-size: 18px; font-size: 1.125rem; text-align: left; margin-bottom: 0; }
-.signup-form .field { margin-bottom: -40px; }
 
 p { font-family: 'Open Sans'; }
 
@@ -1702,5 +1703,8 @@ body { background: #111; }
 .info h3 { text-align: left; }
 
 footer { font-size: 18px; font-size: 1.125rem; position: fixed; bottom: -8px; left: 20px; }
-footer a { color: #00abbb; }
-footer a:hover { color: #08eaff; }
+
+footer a, .lead a { color: #00abbb; }
+footer a:hover, .lead a:hover { color: #08eaff; }
+
+.github { font-size: 42px; font-size: 2.625rem; }
