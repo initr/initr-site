@@ -1,0 +1,84 @@
+// Your custom SCSS should be written here...
+
+.hero, .lead, .input, .btn input {
+	font-family: 'Audiowide';
+}
+
+h1, h2, a.github, .lead {
+	display: block;
+	text-align: center;
+}
+
+.hero {
+	margin-top: 20px;
+}
+
+p.lead {
+	margin-top: 40px;
+	@include font-size($xlarge);
+}
+
+.signup-form {
+	margin-top: 40px;
+
+	label {
+		@include font-size($med);
+
+		text-align: left;
+		margin-bottom: 0;
+	}
+}
+
+p {
+	font-family: 'Open Sans';
+}
+
+body {
+	background: #111;
+}
+
+.info {
+	margin-top: 60px;
+
+	p {
+		color: white;
+		text-align: left;
+		@include font-size($med);
+	}
+
+	h3 {
+		text-align: left;
+	}
+}
+
+footer {
+	@include font-size($med);
+
+	position: fixed;
+
+	bottom: 8px;
+	left: 20px;
+}
+
+footer, .lead, .hero {
+	a {
+		color: $primary-color;
+	}
+
+	a:hover {
+		color: lighten($primary-color, 15%);
+	}
+}
+
+.github {
+	@include font-size($xlarge);
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+.columns pre.prettyprint {
+	@include border-radius(10px);
+	border: 2px $primary-color solid;
+	padding: 10px;
+	margin-bottom: 20px;
+}
