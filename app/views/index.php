@@ -44,5 +44,7 @@
 			This allows modular building of init scripts.
 		</p>
 
+		<h4><a href="/example">view example</a></h4>
+
 	</div>
 </div>
