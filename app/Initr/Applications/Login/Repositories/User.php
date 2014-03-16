@@ -15,4 +15,9 @@ class User
 	{
 		return $this->user->newInstance();
 	}
+
+	public function store(array $attributes = array())
+	{
+		return $this->user->create($attributes);
+	}
 }

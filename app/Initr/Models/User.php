@@ -12,6 +12,12 @@ class User extends Model
 	 */
 	protected $table = 'users';
 
+	protected $fillable = [
+		'username',
+		'password',
+		'email',
+	];
+
 	/**
 	 * The attributes excluded from the model's JSON form.
 	 *
