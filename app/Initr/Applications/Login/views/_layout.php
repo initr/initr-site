@@ -11,6 +11,8 @@
 	<script src="/js/modernizr.js"></script>
 </head>
 <body>
+	<?= View::make('App::_nav') ?>
+
 	<div class="row">
 		<?= View::make('App::_alerts') ?>
 	</div>

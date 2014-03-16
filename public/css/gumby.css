@@ -1714,3 +1714,8 @@ footer a:hover, .lead a:hover, .hero a:hover { color: #08eaff; }
 .field.danger:after { top: 40%; }
 
 .alert { margin-top: 8px; margin-bottom: 0; }
+
+.navbar.row { width: 100%; max-width: 100%; }
+
+.navbar h1.logo a { font-size: 42px; font-size: 2.625rem; text-align: left; color: #00c2d4; }
+.navbar h1.logo a:hover { color: #08eaff; }

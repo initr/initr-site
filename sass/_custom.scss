@@ -91,3 +91,18 @@ footer, .lead, .hero {
 	margin-top: 8px;
 	margin-bottom: 0;
 }
+
+.navbar.row {
+	width: 100%;
+	max-width: 100%;
+}
+
+.navbar h1.logo a{
+	@include font-size($xlarge);
+	text-align: left;
+	color: lighten($primary-color, 5%);
+
+	&:hover {
+		color: lighten($primary-color, 15%);
+	}
+}

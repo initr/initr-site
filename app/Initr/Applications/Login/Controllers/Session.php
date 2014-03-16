@@ -36,4 +36,12 @@ class Session extends \BaseController
 			->withInput()
 			->withErrors($this->validator->errors());
 	}
+
+	public function destroy()
+	{
+		Auth::logout();
+		SessionStore::flash('success', 'You have logged out');
+
+		return Redirect::route('Login.session.create');
+	}
 }
