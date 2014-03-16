@@ -20,6 +20,6 @@ class Users extends \BaseController
 	{
 		$user = $this->user->newInstance();
 
-		$this->layout->nest('content', 'Login::users.create');
+		$this->layout->nest('content', 'Login::users.create', compact('user'));
 	}
 }

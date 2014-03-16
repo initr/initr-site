@@ -11,7 +11,9 @@
 	<script src="/js/modernizr.js"></script>
 </head>
 <body>
-	<?= $content ?>
+	<div class="row">
+		<?= $content ?>
+	</div>
 
 	<a href="https://github.com/initr/initr-site/issues/1" class="github">
 		Help This Project
@@ -24,14 +26,5 @@
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 	<srcipt src="/js/gumby.min.js"></srcipt>
-	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
-	<script>
-		$('.modal').on('click', '.switch', function(ev) {
-			$('.modal.active').fadeOut(function() {
-				$('.modal.active').removeClass('active');
-			});
-			return false;
-		});
-	</script>
 </body>
 </html>
