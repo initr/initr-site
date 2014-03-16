@@ -1709,7 +1709,7 @@ footer a:hover, .lead a:hover, .hero a:hover { color: #08eaff; }
 
 .github { font-size: 42px; font-size: 2.625rem; margin-top: 40px; margin-bottom: 20px; }
 
-.columns pre.prettyprint { -webkit-border-radius: 10px; -moz-border-radius: 10px; -ms-border-radius: 10px; -o-border-radius: 10px; border-radius: 10px; border: 2px #00abbb solid; padding: 10px; margin-bottom: 20px; }
+.columns pre.prettyprint { -webkit-border-radius: 10px; -moz-border-radius: 10px; -ms-border-radius: 10px; -o-border-radius: 10px; border-radius: 10px; border: 2px #00abbb solid; padding: 10px; margin-bottom: 20px; overflow: scroll; }
 
 .field.danger:after { top: 40%; }
 

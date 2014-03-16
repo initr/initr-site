@@ -12,6 +12,7 @@ class Home extends \BaseController
 
 	public function example()
 	{
+		$this->layout->nest('stylesBefore', 'Brochure::home._example-styles');
 		$this->layout->nest('content', 'Brochure::home.example');
 	}
 }

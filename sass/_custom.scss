@@ -81,6 +81,8 @@ footer, .lead, .hero {
 	border: 2px $primary-color solid;
 	padding: 10px;
 	margin-bottom: 20px;
+
+	overflow: scroll;
 }
 
 .field.danger:after {

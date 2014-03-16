@@ -5,8 +5,6 @@
 	<meta charset="utf-8">
 
 	<title>initr.io</title>
-	<link rel="stylesheet" href="/css/prettify.css">
-	<link rel="stylesheet" href="/css/sunburst.css">
 	<link rel="stylesheet" href="/css/gumby.css">
 	<script src="/js/modernizr.js"></script>
 </head>

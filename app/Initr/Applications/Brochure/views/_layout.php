@@ -5,8 +5,9 @@
 	<meta charset="utf-8">
 
 	<title>initr.io</title>
-	<link rel="stylesheet" href="/css/prettify.css">
-	<link rel="stylesheet" href="/css/sunburst.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+	<?= isset($stylesBefore) ? $stylesBefore : null ?>
 	<link rel="stylesheet" href="/css/gumby.css">
 	<script src="/js/modernizr.js"></script>
 </head>

@@ -7,26 +7,22 @@
 			initr.io
 		</a>
 	</h1>
-	<ul>
-		<div class="six columns">
+	<ul class="six columns">
+		<li>
+			<?= HTML::linkRoute('Brochure.home.index', 'About') ?>
+		</li>
+		<?php if (Auth::guest()) : ?>
 			<li>
-				<?= HTML::linkRoute('Brochure.home.index', 'About') ?>
+				<?= HTML::linkRoute('Login.users.create', 'Signup') ?>
 			</li>
-		</div>
-		<div class="three columns">
-			<?php if (Auth::guest()) : ?>
-				<li>
-					<?= HTML::linkRoute('Login.users.create', 'Signup') ?>
-				</li>
-				<li>
-					<?= HTML::linkRoute('Login.session.create', 'Login') ?>
-				</li>
-			<?php else : ?>
-				<li>
-					<?= HTML::linkRoute('Login.session.destroy', 'Logout') ?>
-				</li>
-			<?php endif ?>
-		</div>
+			<li>
+				<?= HTML::linkRoute('Login.session.create', 'Login') ?>
+			</li>
+		<?php else : ?>
+			<li>
+				<?= HTML::linkRoute('Login.session.destroy', 'Logout') ?>
+			</li>
+		<?php endif ?>
 	</ul>
 
 </div>
