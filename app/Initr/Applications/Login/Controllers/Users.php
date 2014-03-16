@@ -29,7 +29,9 @@ class Users extends \BaseController
 		$input = Input::only('email', 'username', 'password', 'password_confirmation');
 
 		if ($this->validator->validateCreate($input)) {
+			$this->user->store($input);
 
+			return Redirect::route('Login.users.success');
 		} else {
 			return Redirect::back()
 				->withInput()
