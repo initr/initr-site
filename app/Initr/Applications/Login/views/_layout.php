@@ -12,6 +12,9 @@
 </head>
 <body>
 	<div class="row">
+		<?= View::make('App::_alerts') ?>
+	</div>
+	<div class="row">
 		<?= $content ?>
 	</div>
 

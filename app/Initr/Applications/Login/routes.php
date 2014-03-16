@@ -2,7 +2,10 @@
 
 $controllerNamespace = 'Initr\\Applications\\Login\\Controllers';
 
-Route::group(['namespace' => $controllerNamespace, 'as' => 'Login'], function() {
+Route::group(['namespace' => $controllerNamespace, 'as' => 'Login'], function()
+{
+	Route::get('login', ['uses' => 'Session@create', 'as' => 'session.create']);
+	Route::post('login', ['uses' => 'Session@store', 'as' => 'session.store']);
 
 	Route::get('signup', ['uses' => 'Users@create', 'as' => 'users.create']);
 	Route::post('signup', ['uses' => 'Users@store', 'as' => 'users.store']);

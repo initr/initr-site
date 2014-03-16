@@ -1,14 +1,20 @@
 <?php namespace Initr\Services;
 
 use Illuminate\Mail\Mailer;
+use Initr\Models\User;
 use Illuminate\Auth\UserProviderInterface;
 
 class UserConfirmer
 {
+	protected $mailer;
+
+	protected $user;
+
 	protected $confirmationView = 'App::emails.auth.confirmation';
 
-	public function __construct(Mailer $mailer)
+	public function __construct(User $user, Mailer $mailer)
 	{
+		$this->user = $user;
 		$this->mailer = $mailer;
 	}
 
@@ -30,5 +36,20 @@ class UserConfirmer
 	public function getConfirmationView()
 	{
 		return $this->confirmationView;
+	}
+
+	public function confirmUser($token)
+	{
+		$user = $this->user->where('confirmation_code', $token)->first();
+
+		if ($user) {
+			$user->confirmed = true;
+			// $user->confirmation_code = null;
+			$user->save();
+
+			return true;
+		} else {
+			return null;
+		}
 	}
 }

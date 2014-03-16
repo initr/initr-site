@@ -1,8 +1,9 @@
 <?php namespace Initr\Applications\Login\Controllers;
 
 use Initr\Applications\Login\Repositories\User;
+use Initr\Services\UserConfirmer;
 use Initr\Applications\Login\Validators\User as Validator;
-use Input, Redirect;
+use Input, Redirect, Session;
 
 class Users extends \BaseController
 {
@@ -10,11 +11,13 @@ class Users extends \BaseController
 
 	protected $user;
 	protected $validator;
+	protected $confirmer;
 
-	public function __construct(User $user, Validator $validator)
+	public function __construct(User $user, Validator $validator, UserConfirmer $confirmer)
 	{
 		$this->user = $user;
 		$this->validator = $validator;
+		$this->confirmer = $confirmer;
 	}
 
 	public function create()
@@ -42,5 +45,16 @@ class Users extends \BaseController
 	public function success()
 	{
 		$this->layout->nest('content', 'Login::users.success');
+	}
+
+	public function confirm($token)
+	{
+		if ($this->confirmer->confirmUser($token)) {
+			Session::flash('success', 'Your user has been activated. Login now.');
+
+			return Redirect::route('Login.session.create');
+		} else {
+			$this->layout->nest('content', 'Login::users.confirm-fail');
+		}
 	}
 }
