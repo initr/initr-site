@@ -8,4 +8,5 @@ Route::group(['namespace' => $controllerNamespace, 'as' => 'Login'], function() 
 	Route::post('signup', ['uses' => 'Users@store', 'as' => 'users.store']);
 
 	Route::get('signup/success', ['uses' => 'Users@success', 'as' => 'users.success']);
+	Route::get('signup/confirm/{token}', ['uses' => 'Users@confirm', 'as' => 'users.confirm']);
 });
