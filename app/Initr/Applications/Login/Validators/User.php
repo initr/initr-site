@@ -5,8 +5,8 @@ use Initr\Services\Validator;
 class User extends Validator
 {
 	protected $createRules = [
-		'email'    => 'required|email',
-		'username' => 'required',
+		'email'    => 'required|email|unique:users',
+		'username' => 'required|unique:users',
 		'password' => 'required|confirmed',
 	];
 }
