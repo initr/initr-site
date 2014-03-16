@@ -2,7 +2,7 @@
 
 class Home extends \BaseController
 {
-	public $layout = 'Login::_layout';
+	public $layout = 'Brochure::_layout';
 
 	public function index()
 	{
