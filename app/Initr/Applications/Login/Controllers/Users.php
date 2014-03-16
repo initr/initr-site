@@ -1,6 +1,6 @@
 <?php namespace Initr\Applications\Login\Controllers;
 
-// use Initr\Applications\Login\Repositories\User;
+use Initr\Applications\Login\Repositories\User;
 use Initr\Applications\Login\Validators\User as Validator;
 
 class Users extends \BaseController
@@ -10,7 +10,7 @@ class Users extends \BaseController
 	protected $user;
 	protected $validator;
 
-	public function __construct(Validator $validator)
+	public function __construct(User $user, Validator $validator)
 	{
 		$this->user = $user;
 		$this->validator = $validator;
