@@ -38,4 +38,9 @@ class Users extends \BaseController
 				->withErrors($this->validator->errors());
 		}
 	}
+
+	public function success()
+	{
+		$this->layout->nest('content', 'Login::users.success');
+	}
 }
