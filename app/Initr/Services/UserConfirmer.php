@@ -22,6 +22,7 @@ class UserConfirmer
 
 		return $this->mailer->send($view, compact('token', 'user'), function($m) use ($user, $token)
 		{
+			$m->subject('Welcome to inir.io');
 			$m->to($user->getConfirmationEmail());
 		});
 	}
