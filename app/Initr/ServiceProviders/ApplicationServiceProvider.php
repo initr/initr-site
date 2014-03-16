@@ -17,6 +17,12 @@ class ApplicationServiceProvider extends ServiceProvider
 		'Initr\ServiceProviders\Observers',
 	);
 
+	protected $applications = array(
+		'Brochure',
+		'Login',
+		'Api',
+	);
+
 	/**
 	 * An array of the service provider instances.
 	 *
@@ -43,6 +49,12 @@ class ApplicationServiceProvider extends ServiceProvider
 
 		foreach ($this->providers as $provider)
 		{
+			$this->instances[] = $this->app->register($provider);
+		}
+
+		foreach ($this->applications as $application)
+		{
+			$provider = 'Initr\\Applications\\' . $application . '\\ServiceProviders\\' . $application;
 			$this->instances[] = $this->app->register($provider);
 		}
 	}

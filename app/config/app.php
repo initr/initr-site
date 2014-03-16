@@ -111,8 +111,6 @@ return array(
 		'Rtablada\AppBuilder\AppBuilderServiceProvider',
 
 		'Initr\ServiceProviders\ApplicationServiceProvider',
-		'Initr\Applications\Api\ServiceProviders\Api',
-		'Initr\Applications\Login\ServiceProviders\Login',
 
 	),
 
