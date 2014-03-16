@@ -2,13 +2,6 @@
 
 $layout = View::make('_layout');
 
-Route::get('/', function() use ($layout)
-{
-	$layout->nest('content', 'index');
-
-	return $layout;
-});
-
 Route::get('example', function() use ($layout)
 {
 	$layout->nest('content', 'example');

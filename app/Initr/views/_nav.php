@@ -10,7 +10,7 @@
 	<ul>
 		<div class="six columns">
 			<li>
-				<?= HTML::link('/', 'About') ?>
+				<?= HTML::linkRoute('Brochure.home.index', 'About') ?>
 			</li>
 		</div>
 		<div class="three columns">
