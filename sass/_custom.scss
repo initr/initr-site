@@ -82,3 +82,7 @@ footer, .lead, .hero {
 	padding: 10px;
 	margin-bottom: 20px;
 }
+
+.field.danger:after {
+	top: 40%;
+}

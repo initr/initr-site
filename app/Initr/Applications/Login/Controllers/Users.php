@@ -2,6 +2,7 @@
 
 use Initr\Applications\Login\Repositories\User;
 use Initr\Applications\Login\Validators\User as Validator;
+use Input, Redirect;
 
 class Users extends \BaseController
 {
@@ -21,5 +22,18 @@ class Users extends \BaseController
 		$user = $this->user->newInstance();
 
 		$this->layout->nest('content', 'Login::users.create', compact('user'));
+	}
+
+	public function store()
+	{
+		$input = Input::only('email', 'username', 'password', 'password_confirmation');
+
+		if ($this->validator->validateCreate($input)) {
+
+		} else {
+			return Redirect::back()
+				->withInput()
+				->withErrors($this->validator->errors());
+		}
 	}
 }
