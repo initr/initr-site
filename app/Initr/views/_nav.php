@@ -11,6 +11,9 @@
 		<li>
 			<?= HTML::linkRoute('Brochure.home.index', 'About') ?>
 		</li>
+		<li>
+			<?= HTML::linkRoute('Brochure.home.example', 'Schema') ?>
+		</li>
 		<?php if (Auth::guest()) : ?>
 			<li>
 				<?= HTML::linkRoute('Login.users.create', 'Signup') ?>
