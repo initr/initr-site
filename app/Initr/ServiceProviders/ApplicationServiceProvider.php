@@ -5,6 +5,9 @@ use Illuminate\Support\ServiceProvider;
 class ApplicationServiceProvider extends ServiceProvider
 {
 
+	protected $fileLocation = __DIR__;
+	protected $viewNamespace = 'App';
+
 	/**
 	 * The provider class names.
 	 *
@@ -35,11 +38,24 @@ class ApplicationServiceProvider extends ServiceProvider
 	 */
 	public function boot()
 	{
+		$this->bootViews();
 		$this->instances = array();
 
 		foreach ($this->providers as $provider)
 		{
 			$this->instances[] = $this->app->register($provider);
+		}
+	}
+
+	/**
+	 * Boot views namespace.
+	 *
+	 * @return void
+	 */
+	public function bootViews()
+	{
+		if ($this->viewNamespace) {
+			$this->app['view']->addNamespace($this->viewNamespace, $this->fileLocation.'/../views');
 		}
 	}
 

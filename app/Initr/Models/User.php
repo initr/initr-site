@@ -59,4 +59,14 @@ class User extends Model
 	{
 		$this->attributes['password'] = Hash::make($value);
 	}
+
+	public function getConfirmationEmail()
+	{
+		return $this->email;
+	}
+
+	public function getConfirmationToken()
+	{
+		return $this->confirmation_code;
+	}
 }
