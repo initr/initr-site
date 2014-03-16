@@ -7,5 +7,11 @@ class Home extends \BaseController
 	public function index()
 	{
 		$this->layout->nest('content', 'Brochure::home.index');
+		$this->layout->nest('scripts', 'Brochure::home._index-scripts');
+	}
+
+	public function example()
+	{
+		$this->layout->nest('content', 'Brochure::home.example');
 	}
 }

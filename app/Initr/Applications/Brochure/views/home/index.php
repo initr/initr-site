@@ -8,7 +8,7 @@
 <div class="row">
 	<div class="columns ten centered">
 
-		<?= View::make('_mailchimp') ?>
+		<?= View::make('Brochure::home._mailchimp') ?>
 	</div>
 </div>
 

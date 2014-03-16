@@ -31,5 +31,6 @@
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 	<srcipt src="/js/gumby.min.js"></srcipt>
+	<?= isset($scripts) ? $scripts : null ?>
 </body>
 </html>
