@@ -107,6 +107,12 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+		'Rtablada\AppToolkit\AppToolkitServiceProvider',
+		'Rtablada\AppBuilder\AppBuilderServiceProvider',
+
+		'Initr\Applications\Api\ServiceProviders\Api',
+		'Initr\Applications\Login\ServiceProviders\Login',
+
 	),
 
 	/*
