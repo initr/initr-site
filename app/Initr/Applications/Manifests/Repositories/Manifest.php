@@ -39,6 +39,11 @@ class Manifest
 		}
 	}
 
+	public function findByName($name)
+	{
+		return $this->manifest->where('name', $name)->first();
+	}
+
 	public function setValidator($validator)
 	{
 		$this->validator = $validator;

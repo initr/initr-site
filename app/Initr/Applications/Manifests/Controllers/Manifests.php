@@ -42,4 +42,11 @@ class Manifests extends \BaseController
 			->withInput()
 			->withErrors($this->validator->errors());
 	}
+
+	public function show($name)
+	{
+		$manifest = $this->manifest->findByName($name);
+
+		return $manifest;
+	}
 }
