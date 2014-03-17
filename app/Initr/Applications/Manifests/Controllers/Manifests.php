@@ -2,7 +2,7 @@
 
 use Initr\Applications\Manifests\Repositories\Manifest;
 use Initr\Applications\Manifests\Validators\Manifest as Validator;
-use Input, Redirect, Auth;
+use Input, Redirect, Auth, Session;
 
 class Manifests extends \BaseController
 {
