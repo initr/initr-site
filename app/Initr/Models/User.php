@@ -1,9 +1,11 @@
 <?php namespace Initr\Models;
 
+use Illuminate\Auth\UserInterface;
+use Illuminate\Auth\Reminders\RemindableInterface;
 use Illuminate\Database\Eloquent\Model;
 use Hash;
 
-class User extends Model
+class User extends Model implements UserInterface, RemindableInterface
 {
 	/**
 	 * The database table used by the model.
