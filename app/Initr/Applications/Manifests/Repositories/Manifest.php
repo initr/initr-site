@@ -4,7 +4,7 @@ use Initr\Models\Manifest as ManifestModel;
 use Initr\Services\Brokers\Manifest as ManifestBroker;
 use Initr\Applications\Manifests\Validators\Manifest as Validator;
 
-class Manifest
+class Manifest extends Initr\Repositories\Manifest
 {
 	protected $manifest;
 	protected $broker;
@@ -16,11 +16,6 @@ class Manifest
 		$this->manifest = $manifest;
 		$this->broker = $broker;
 		$this->manifestVersion = $manifestVersion;
-	}
-
-	public function newInstance(array $attributes = array())
-	{
-		return $this->manifest->newInstance($attributes);
 	}
 
 	public function createFromUrlForUser($url, $user)
@@ -39,20 +34,6 @@ class Manifest
 		} else {
 			return null;
 		}
-	}
-
-	public function findByName($name)
-	{
-		return $this->manifest->where('name', $name)->first();
-	}
-
-	public function updateVersions($name)
-	{
-		$manifest = $this->findByName($name);
-
-		$versions = $this->broker->getVersionsAndTags($manifest->repository_url, $manifest);
-
-		$this->manifestVersion->updateForManifestWithVersionInfo($manifest, $versions);
 	}
 
 	public function setValidator($validator)

@@ -11,6 +11,25 @@ class Manifest
 		$this->manifest = $manifest;
 	}
 
+	public function newInstance(array $attributes = array())
+	{
+		return $this->manifest->newInstance($attributes);
+	}
+
+	public function findByName($name)
+	{
+		return $this->manifest->where('name', $name)->first();
+	}
+
+	public function updateVersions($name)
+	{
+		$manifest = $this->findByName($name);
+
+		$versions = $this->broker->getVersionsAndTags($manifest->repository_url, $manifest);
+
+		$this->manifestVersion->updateForManifestWithVersionInfo($manifest, $versions);
+	}
+
 	public function searchNames($query)
 	{
 		$query = "%{$query}%";
