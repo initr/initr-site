@@ -34,7 +34,7 @@ class Manifests extends \BaseController
 
 		if ($this->validator->validateSubmit($input)) {
 			if ($manifest = $this->manifest->createFromUrlForUser($input['repository_url'], Auth::user())) {
-				return Redirect::route('Manifest.manifests.show', $manifest->name);
+				return Redirect::route('Manifests.manifests.show', $manifest->name);
 			}
 		}
 

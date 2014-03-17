@@ -8,12 +8,14 @@ class Manifest
 {
 	protected $manifest;
 	protected $broker;
+	protected $manifestVersion;
 	protected $validator;
 
-	public function __construct(ManifestModel $manifest, ManifestBroker $broker)
+	public function __construct(ManifestModel $manifest, ManifestBroker $broker, ManifestVersion $manifestVersion)
 	{
 		$this->manifest = $manifest;
 		$this->broker = $broker;
+		$this->manifestVersion = $manifestVersion;
 	}
 
 	public function newInstance(array $attributes = array())
@@ -50,7 +52,7 @@ class Manifest
 
 		$versions = $this->broker->getVersionsAndTags($manifest->repository_url, $manifest);
 
-		return $versions;
+		$this->manifestVersion->updateForManifestWithVersionInfo($manifest, $versions);
 	}
 
 	public function setValidator($validator)
