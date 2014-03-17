@@ -54,6 +54,8 @@ class Manifests extends \BaseController
 	{
 		$manifest = $this->manifest->updateVersions($name);
 
-		return $manifest;
+		Session::flash('success', 'This manifest has been updated');
+
+		return Redirect::route('Manifests.manifests.show', $name);
 	}
 }
