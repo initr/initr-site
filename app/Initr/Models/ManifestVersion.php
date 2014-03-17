@@ -37,4 +37,19 @@ class ManifestVersion extends Model
 			$this->attributes['json_file'] = $value;
 		}
 	}
+
+	public function getJsonFileAttribute()
+	{
+		return json_decode($this->attributes['json_file'], true);
+	}
+
+	public function getCompiledScriptsAttribute()
+	{
+		return json_decode($this->attributes['compiled_scripts'], true);
+	}
+
+	public function getCompiledResponseAttribute()
+	{
+		return json_decode($this->attributes['compiled_response'], true);
+	}
 }

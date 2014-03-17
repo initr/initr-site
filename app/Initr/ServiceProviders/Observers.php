@@ -14,6 +14,7 @@ class Observers extends ServiceProvider
 
 	protected $observableModels = array(
 		'User',
+		'ManifestVersion',
 	);
 
 	/**
