@@ -21,6 +21,7 @@ class ApplicationServiceProvider extends ServiceProvider
 		'Brochure',
 		'Login',
 		'Api',
+		'Manifests',
 	);
 
 	/**
