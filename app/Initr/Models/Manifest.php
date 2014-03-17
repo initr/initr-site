@@ -16,4 +16,9 @@ class Manifest extends Model
 		'name',
 		'repository_url',
 	];
+
+	public function versions()
+	{
+		return $this->hasMany('Initr\Models\ManifestVersion');
+	}
 }

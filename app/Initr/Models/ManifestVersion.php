@@ -21,6 +21,11 @@ class ManifestVersion extends Model
 		'commit_hash',
 	];
 
+	public function manifest()
+	{
+		return $this->belongsTo('Initr\Models\Manifest');
+	}
+
 	public function getRawBaseUrlAttribute()
 	{
 		$rawBaseUrl = preg_replace('/(http:\/\/)|(https:\/\/)/', 'https://raw.', $this->base_url);
