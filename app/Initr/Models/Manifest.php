@@ -14,6 +14,6 @@ class Manifest extends Model
 	protected $fillable = [
 		'user_id',
 		'name',
-		'repostiory_url',
+		'repository_url',
 	];
 }

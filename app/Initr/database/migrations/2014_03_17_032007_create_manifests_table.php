@@ -14,7 +14,7 @@ class CreateManifestsTable extends Migration {
 	{
 		Schema::create('manifests', function($table) {
 			$table->increments('id');
-			$table->string('repostiory_url');
+			$table->string('repository_url');
 			$table->string('name');
 			$table->integer('user_id');
 			$table->timestamps();

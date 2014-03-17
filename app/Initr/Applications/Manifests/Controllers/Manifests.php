@@ -2,7 +2,7 @@
 
 use Initr\Applications\Manifests\Repositories\Manifest;
 use Initr\Applications\Manifests\Validators\Manifest as Validator;
-use Input, Redirect;
+use Input, Redirect, Auth;
 
 class Manifests extends \BaseController
 {
@@ -31,10 +31,10 @@ class Manifests extends \BaseController
 	{
 		$input = Input::only('repository_url');
 
-		if ($this->validator->validateCreate($input)) {
-			dd($input);
+		if ($this->validator->validateSubmit($input)) {
+			$manifest = $this->manifest->createFromUrlForUser($input['repository_url'], Auth::user());
 
-			return Redirect::route('Login.users.success');
+			return Redirect::route('Manifest.manifests.show', $manifest->name);
 		} else {
 			return Redirect::back()
 				->withInput()
