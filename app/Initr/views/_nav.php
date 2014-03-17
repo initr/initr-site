@@ -15,15 +15,15 @@
 		</li>
 		<?php if (Auth::guest()) : ?>
 			<li>
-				<?= HTML::linkRoute('Manifests.manifests.create', 'Submit Manifest') ?>
-			</li>
-			<li>
 				<?= HTML::linkRoute('Login.users.create', 'Signup') ?>
 			</li>
 			<li>
 				<?= HTML::linkRoute('Login.session.create', 'Login') ?>
 			</li>
 		<?php else : ?>
+			<li>
+				<?= HTML::linkRoute('Manifests.manifests.create', 'Submit Manifest') ?>
+			</li>
 			<li>
 				<?= HTML::linkRoute('Login.session.destroy', 'Logout') ?>
 			</li>
