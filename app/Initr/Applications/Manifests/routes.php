@@ -6,4 +6,6 @@ Route::group(['namespace' => $controllerNamespace, 'prefix' => 'manifests'], fun
 {
 	Route::get('submit', ['uses' => 'Manifests@create', 'as' => 'Manifests.manifests.create']);
 	Route::post('/', ['uses' => 'Manifests@store', 'as' => 'Manifests.manifests.store']);
+
+	Route::get('{name}', ['uses' => 'Manifests@show', 'as' => 'Manifests.manifests.show']);
 });

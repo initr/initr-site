@@ -10,11 +10,10 @@ class Manifest
 	protected $broker;
 	protected $validator;
 
-	public function __construct(ManifestModel $manifest, ManifestBroker $broker, Validator $validator)
+	public function __construct(ManifestModel $manifest, ManifestBroker $broker)
 	{
 		$this->manifest = $manifest;
 		$this->broker = $broker;
-		$this->validator = $validator;
 	}
 
 	public function newInstance(array $attributes = array())
@@ -38,6 +37,11 @@ class Manifest
 		} else {
 			return null;
 		}
+	}
+
+	public function setValidator($validator)
+	{
+		$this->validator = $validator;
 	}
 
 	public function errors()

@@ -2,6 +2,10 @@
 	<?= Form::open(['route' => 'Manifests.manifests.store']) ?>
 		<h2>Register Manifests</h2>
 
+		<?php if ($errors->has('name')) : ?>
+			<div class="alert warning"><?= $errors->first('name') ?></div>
+		<?php endif ?>
+
 		<div class="field <?= $errors->has('repository_url') ? 'danger' : null ?>">
 			<?= Form::label('repository_url', 'Repository Url:') ?>
 			<?= Form::text('repository_url', $manifest->repository_url, ['class' => 'input']) ?>

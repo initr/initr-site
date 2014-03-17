@@ -13,8 +13,9 @@ class Manifests extends \BaseController
 
 	public function __construct(Manifest $manifest, Validator $validator)
 	{
-		$this->manifest = $manifest;
 		$this->validator = $validator;
+		$this->manifest = $manifest;
+		$this->manifest->setValidator($validator);
 		$this->beforeFilter('Manifests.auth', ['only' => ['create', 'store', 'update', 'destroy']]);
 	}
 
@@ -32,13 +33,13 @@ class Manifests extends \BaseController
 		$input = Input::only('repository_url');
 
 		if ($this->validator->validateSubmit($input)) {
-			$manifest = $this->manifest->createFromUrlForUser($input['repository_url'], Auth::user());
-
-			return Redirect::route('Manifest.manifests.show', $manifest->name);
-		} else {
-			return Redirect::back()
-				->withInput()
-				->withErrors($this->validator->errors());
+			if ($manifest = $this->manifest->createFromUrlForUser($input['repository_url'], Auth::user())) {
+				return Redirect::route('Manifest.manifests.show', $manifest->name);
+			}
 		}
+
+		return Redirect::back()
+			->withInput()
+			->withErrors($this->validator->errors());
 	}
 }
