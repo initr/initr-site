@@ -1,12 +1,14 @@
 {
+	"name": "vendor.manifest-name",
+	"repository": "https://gihub.com/init/example",
 	"commands": [
-		"ln -s bower_components/jquery/js/jquery.js public/js/jquery.js"
+		"ln -s lib/bower/jquery/dist/jquery.js public/js/jquery.js"
 	],
 	"scripts": [
 		"init/startup.sh",
 		"https://github.com/rtablada/initr/tree/master/tests/test.sh"
 	],
 	"require": {
-		"rtablada/gumby": "*"
+		"rtablada.bower-setup": "*"
 	}
 }
