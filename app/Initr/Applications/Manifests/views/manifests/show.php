@@ -11,7 +11,7 @@
 				<li>
 					<h3><?= $version->version_name ?></h3>
 
-					<div class="github-info"><?= HTML::link($version->base_url, 'View on Github') ?></div>
+					<div class="github-info">Commit: <?= HTML::link($version->base_url, $version->sha) ?></div>
 
 					<span class="script-label">Scripts:</span>
 					<ul class="scripts">
