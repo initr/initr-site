@@ -4,7 +4,7 @@ use Initr\Models\Manifest as ManifestModel;
 use Initr\Services\Brokers\Manifest as ManifestBroker;
 use Initr\Applications\Manifests\Validators\Manifest as Validator;
 
-class Manifest extends Initr\Repositories\Manifest
+class Manifest extends \Initr\Repositories\Manifest
 {
 	protected $manifest;
 	protected $broker;
