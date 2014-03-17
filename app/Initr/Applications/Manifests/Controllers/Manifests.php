@@ -49,4 +49,11 @@ class Manifests extends \BaseController
 
 		return $manifest;
 	}
+
+	public function update($name)
+	{
+		$manifest = $this->manifest->updateVersions($name);
+
+		return $manifest;
+	}
 }

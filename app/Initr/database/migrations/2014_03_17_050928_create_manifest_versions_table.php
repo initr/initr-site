@@ -21,7 +21,7 @@ class CreateManifestVersionsTable extends Migration {
 			$table->text('compiled_scripts');
 			$table->text('compiled_response');
 			$table->string('commit_hash');
-			$table->string('committed_at');
+			// $table->string('committed_at');
 			$table->timestamps();
 		});
 	}

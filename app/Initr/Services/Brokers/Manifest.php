@@ -20,4 +20,29 @@ class Manifest
 
 		return json_decode($file);
 	}
+
+	public function getVersionsAndTags($url)
+	{
+		$rawApiUrl = preg_replace('/(http:\/\/)|(https:\/\/)github.com/', 'https://api.github.com/repos', $url);
+		$tags = $this->updateTags($rawApiUrl);
+		$branches = $this->updateBranches($rawApiUrl);
+
+		return compact('tags', 'branches');
+	}
+
+	protected function updateTags($rawBaseUrl)
+	{
+		$url = $rawBaseUrl . '/tags';
+		$response = $this->guzzle->get($url)->send();
+
+		return json_decode($response->getBody(true));
+	}
+
+	protected function updateBranches($rawBaseUrl)
+	{
+		$url = $rawBaseUrl . '/branches';
+		$response = $this->guzzle->get($url)->send();
+
+		return json_decode($response->getBody(true));
+	}
 }

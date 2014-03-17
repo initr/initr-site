@@ -44,6 +44,15 @@ class Manifest
 		return $this->manifest->where('name', $name)->first();
 	}
 
+	public function updateVersions($name)
+	{
+		$manifest = $this->findByName($name);
+
+		$versions = $this->broker->getVersionsAndTags($manifest->repository_url, $manifest);
+
+		return $versions;
+	}
+
 	public function setValidator($validator)
 	{
 		$this->validator = $validator;

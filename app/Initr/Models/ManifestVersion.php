@@ -11,10 +11,6 @@ class ManifestVersion extends Model
 	 */
 	protected $table = 'manifest_versions';
 
-	protected $dates = [
-		'committed_at'
-	];
-
 	protected $fillable = [
 		'manifest_url',
 		'version_name',
@@ -23,6 +19,5 @@ class ManifestVersion extends Model
 		'compiled_scripts',
 		'compiled_response',
 		'commit_hash',
-		'committed_at'
 	];
 }
