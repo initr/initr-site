@@ -57,4 +57,9 @@ class ManifestVersion extends Model
 	{
 		return json_decode($this->attributes['compiled_response'], true);
 	}
+
+	public function getShaAttribute()
+	{
+		return substr($this->attributes['commit_hash'], 0, 7);
+	}
 }

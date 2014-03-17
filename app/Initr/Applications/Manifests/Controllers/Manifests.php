@@ -47,7 +47,7 @@ class Manifests extends \BaseController
 	{
 		$manifest = $this->manifest->findByName($name);
 
-		return $manifest;
+		$this->layout->nest('content', 'Manifests::manifests.show', compact('manifest'));
 	}
 
 	public function update($name)
