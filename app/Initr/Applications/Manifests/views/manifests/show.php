@@ -1,8 +1,10 @@
 <div class="columns ten centered">
 	<div class="manifest-info">
-		<h2><?= $manifest->name ?></h2>
+		<div class="main-info">
+			<h2><?= $manifest->name ?></h2>
 
-		<?= HTML::link($manifest->repository_url, 'View on Github') ?>
+			<?= HTML::link($manifest->repository_url, 'View on Github') ?>
+		</div>
 
 		<ul class="versions">
 			<?php foreach($manifest->versions as $version) : ?>

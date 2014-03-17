@@ -1719,3 +1719,9 @@ footer a:hover, .lead a:hover, .hero a:hover { color: #08eaff; }
 
 .navbar h1.logo a { font-size: 42px; font-size: 2.625rem; text-align: left; color: #00c2d4; }
 .navbar h1.logo a:hover { color: #08eaff; }
+
+.manifest-info .main-info { -webkit-border-radius: 10px 10px 0 0; -moz-border-radius: 10px 10px 0 0; -ms-border-radius: 10px 10px 0 0; -o-border-radius: 10px 10px 0 0; border-radius: 10px 10px 0 0; border: 2px #00abbb solid; padding: 10px; }
+.manifest-info .main-info h2 { text-align: left; padding-top: 0; font-size: 42px; font-size: 2.625rem; }
+.manifest-info .versions > li { border: 2px #00abbb solid; padding: 10px; }
+.manifest-info .versions > li .github-info { float: right; }
+.manifest-info .versions > li:last-child { -webkit-border-radius: 0 0 10px 10px; -moz-border-radius: 0 0 10px 10px; -ms-border-radius: 0 0 10px 10px; -o-border-radius: 0 0 10px 10px; border-radius: 0 0 10px 10px; }
