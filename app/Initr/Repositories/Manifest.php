@@ -11,6 +11,13 @@ class Manifest
 		$this->manifest = $manifest;
 	}
 
+	public function searchNames($query)
+	{
+		$query = "%{$query}%";
+
+		return $this->manifest->with('versions')->where('name', 'LIKE', $query)->paginate();
+	}
+
 	public function findVersionWithName($manifestName, $versionName)
 	{
 		$manifest = $this->manifest->where('name', $manifestName)->first();

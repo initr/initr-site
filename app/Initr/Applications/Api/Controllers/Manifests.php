@@ -11,6 +11,14 @@ class Manifests extends Controller
 		$this->manifest = $manifest;
 	}
 
+	public function index()
+	{
+		$query = Input::get('q');
+		$manifests = $this->manifest->searchNames($query);
+
+		return $manifests;
+	}
+
 	public function info($name, $version)
 	{
 		$version = $this->manifest->findVersionWithName($name, $version);
