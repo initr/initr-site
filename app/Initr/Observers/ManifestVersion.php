@@ -34,8 +34,6 @@ class ManifestVersion
 			$compiledScripts[] = $rawBaseUrl . '/' . $script;
 		}
 
-		dd($compiledScripts);
-
 		return $compiledScripts;
 	}
 
