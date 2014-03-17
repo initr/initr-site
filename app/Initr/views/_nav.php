@@ -1,4 +1,3 @@
-
 <div class="navbar row" id="nav1">
 	<!-- Toggle for mobile navigation, targeting the <ul> -->
 	<a class="toggle" gumby-trigger="#nav1 > ul" href="#"><i class="icon-menu"></i></a>
@@ -15,6 +14,9 @@
 			<?= HTML::linkRoute('Brochure.home.example', 'Schema') ?>
 		</li>
 		<?php if (Auth::guest()) : ?>
+			<li>
+				<?= HTML::linkRoute('Manifests.manifests.create', 'Submit Manifest') ?>
+			</li>
 			<li>
 				<?= HTML::linkRoute('Login.users.create', 'Signup') ?>
 			</li>
