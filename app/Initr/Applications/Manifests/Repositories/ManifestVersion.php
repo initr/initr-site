@@ -24,6 +24,7 @@ class ManifestVersion
 	public function updateForManifestWithVersionInfo($manifest, $versions)
 	{
 		$this->updateWithTags($manifest, $versions['tags']);
+		$this->updateWithBranches($manifest, $versions['branches']);
 	}
 
 	public function updateWithTags($manifest, $tags)
@@ -33,17 +34,36 @@ class ManifestVersion
 				'manifest_id' => $manifest->id,
 				'version_name' => $tag->name,
 			];
-			$manifestVersion = $this->manifestVersion->firstOrNew($attributes);
 
-			if ($manifestVersion->commit_hash !== $tag->commit->sha) {
-				$manifestVersion->base_url = $this->broker->getVersionBaseUrl($manifest, $attributes['version_name']);
-				$manifestVersion->json_file = $this->broker->getJsonFileForManifestVersion($manifestVersion);
-				$manifestVersion->commit_hash = $tag->commit->sha;
-
-				$manifestVersion->save();
-			}
-
+			$this->updateVersion($manifest, $attributes, $tag);
 		}
+	}
+
+	public function updateWithBranches($manifest, $branches)
+	{
+		foreach ($branches as $branch) {
+			$attributes = [
+				'manifest_id' => $manifest->id,
+				'version_name' => 'dev-'.$branch->name,
+			];
+
+			$this->updateVersion($manifest, $attributes, $branch);
+		}
+	}
+
+	public function updateVersion($manifest, $attributes, $version)
+	{
+		$manifestVersion = $this->manifestVersion->firstOrNew($attributes);
+
+		if ($manifestVersion->commit_hash !== $version->commit->sha) {
+			$manifestVersion->base_url = $this->broker->getVersionBaseUrl($manifest, $version->name);
+			$manifestVersion->json_file = $this->broker->getJsonFileForManifestVersion($manifestVersion);
+			$manifestVersion->commit_hash = $version->commit->sha;
+
+			$manifestVersion->save();
+		}
+
+		return $manifestVersion;
 	}
 
 	public function setValidator($validator)
