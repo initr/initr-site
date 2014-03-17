@@ -28,7 +28,7 @@ class Session extends \BaseController
 		if ($this->validator->validateCreate($input) && Auth::attempt($input)) {
 			SessionStore::flash('success', 'You have logged in.');
 
-			return Redirect::route('Login.session.create');
+			return Redirect::intended(route('Login.session.create'));
 		}
 		SessionStore::flash('danger', 'There was an error logging in.');
 
