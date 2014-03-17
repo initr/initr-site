@@ -1,0 +1,5 @@
+{
+	"commands": [
+		"php artisan migrate --path app/Initr/database/migrations"
+	]
+}
