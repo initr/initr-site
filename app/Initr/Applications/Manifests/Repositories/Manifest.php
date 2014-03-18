@@ -22,6 +22,8 @@ class Manifest extends \Initr\Repositories\Manifest
 	{
 		$json = $this->broker->getJSONFromBaseURL($url);
 
+		dd($json);
+
 		$attributes = [
 			'name' => $json->name,
 			'repository_url' => $url,
