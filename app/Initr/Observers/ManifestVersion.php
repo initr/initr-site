@@ -11,7 +11,7 @@ class ManifestVersion
 		$this->manifest = $manifest;
 	}
 
-	public function creating($manifestVersion)
+	public function saving($manifestVersion)
 	{
 		$jsonFile = $manifestVersion->json_file;
 
