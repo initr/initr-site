@@ -15,6 +15,7 @@ class Manifest
 	{
 		$rawBaseUrl = preg_replace('/(http:\/\/)|(https:\/\/)/', 'https://raw.', $url);
 		$jsonUrl = trim($rawBaseUrl, '/') . '/master/initr.json';
+		dd($jsonUrl);
 		$response = $this->guzzle->get($jsonUrl)->send();
 		$file = $response->getBody(true);
 
