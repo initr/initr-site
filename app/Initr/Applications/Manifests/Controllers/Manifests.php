@@ -11,6 +11,8 @@ class Manifests extends \BaseController
 
 	protected $validator;
 
+	public $layout = 'Manifests::_layout';
+
 	public function __construct(Manifest $manifest, Validator $validator)
 	{
 		$this->validator = $validator;
@@ -19,7 +21,13 @@ class Manifests extends \BaseController
 		$this->beforeFilter('Manifests.auth', ['only' => ['create', 'store', 'update', 'destroy']]);
 	}
 
-	public $layout = 'Manifests::_layout';
+	public function index()
+	{
+		$query = Input::get('q');
+		$manifests = $this->manifest->searchNames($query);
+
+		$this->layout->nest('content', 'Manifests::manifests.index', compact('manifests'));
+	}
 
 	public function create()
 	{
