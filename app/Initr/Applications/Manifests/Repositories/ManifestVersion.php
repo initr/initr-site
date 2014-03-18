@@ -55,13 +55,11 @@ class ManifestVersion
 	{
 		$manifestVersion = $this->manifestVersion->firstOrNew($attributes);
 
-		if ($manifestVersion->commit_hash !== $version->commit->sha) {
-			$manifestVersion->base_url = $this->broker->getVersionBaseUrl($manifest, $version->name);
-			$manifestVersion->json_file = $this->broker->getJsonFileForManifestVersion($manifestVersion);
-			$manifestVersion->commit_hash = $version->commit->sha;
+		$manifestVersion->base_url = $this->broker->getVersionBaseUrl($manifest, $version->name);
+		$manifestVersion->json_file = $this->broker->getJsonFileForManifestVersion($manifestVersion);
+		$manifestVersion->commit_hash = $version->commit->sha;
 
-			$manifestVersion->save();
-		}
+		$manifestVersion->save();
 
 		return $manifestVersion;
 	}
