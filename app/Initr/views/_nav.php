@@ -13,6 +13,9 @@
 		<li>
 			<?= HTML::linkRoute('Brochure.home.example', 'Schema') ?>
 		</li>
+		<li>
+			<?= HTML::linkRoute('Manifests.manifests.index', 'Search Registry') ?>
+		</li>
 		<?php if (Auth::guest()) : ?>
 			<li>
 				<?= HTML::linkRoute('Login.users.create', 'Signup') ?>
